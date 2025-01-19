@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const scoreDisplay = document.getElementById("score");
+  const directionDisplay = document.getElementById("direction");
   const width = 28;
   let score = 0;
   const grid = document.querySelector(".grid");
@@ -835,8 +836,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
     popup.innerHTML = `
-      <h1>Welcome to PacMan!</h1>
-      <p>Use voice commands to control PacMan:</p>
+      <h1>Welcome to EchoMotion!</h1>
+      <p>Use voice commands to control the pacman:</p>
       <ul style="text-align: left; margin: 10px auto;">
         <li>Say <strong>"Up"</strong> to move up</li>
         <li>Say <strong>"Down"</strong> to move down</li>
@@ -849,7 +850,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setTimeout(() => {
     popup.style.display = "none"; 
-  }, 2000);
+  }, 5000);
   
 }
 
@@ -970,7 +971,7 @@ function pacDotEaten() {
       const lastResultIndex = event.results.length - 1;
       const transcript = event.results[lastResultIndex][0].transcript.trim().toLowerCase();
       console.log(`Recognized speech: ${transcript}`);
-
+      directionDisplay.innerHTML = transcript;
    
     if (transcript.includes("start")) {
       console.log("Starting game...");
