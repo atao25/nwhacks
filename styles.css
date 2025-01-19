@@ -10,7 +10,7 @@
 
 body {
   font-family: "PressStart2P", sans-serif;
-  background-color: black;
+  background-color: #1a1a1a;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,7 +31,7 @@ body {
   flex-wrap: wrap;
   width: 560px;
   height: 560px;
-  border: 0.2px solid rgb(1, 17, 17);
+  border: 0.2px solid #333;
 }
 
 .grid div {
@@ -40,110 +40,112 @@ body {
 }
 
 .power-pellet {
-  background-color: rgb(14, 233, 14);
-  border: solid black 4px;
+  background-color: #0eef0e;
+  border: solid #222 4px;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 50%;
 }
 
 .pac-dot {
-  background-color: yellow;
-  border: solid black 7px;
+  background-color: #ffe600;
+  border: solid #222 7px;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 50%;
 }
 
 .blinky {
-  background-color: red;
+  background-color: #ff4d4d;
 }
 
 .stinky {
-  background-color: rgb(221, 18, 130);
+  background-color: #ff69b4;
 }
 
 .inky {
-  background-color: rgb(15, 214, 204);
+  background-color: #00ffff;
 }
 
 .clyde {
-  background-color: rgb(243, 125, 78);
+  background-color: #ffa500;
 }
 
 .ghost {
-  border: 0px;
-  border-radius: 0px;
+  border: none;
 }
 
 .scared-ghost {
-  background-color: purple;
-  border: 0px;
-  border-radius: 0px;
+  background-color: #800080;
+  border: none;
+  border-radius: 50%;
 }
 
 .wall {
-  background-color: rgb(8, 14, 102);
+  background-color: #1f3d7a;
 }
 
 .pac-man {
-  background-color: rgb(247, 232, 22);
-  border-radius: 10px;
+  background-color: #f9e81c;
+  border-radius: 50%;
 }
+
 h2 {
-  color: white;
+  color: #f0f0f0;
   font-weight: normal;
   text-align: center;
 }
 
 .low-score {
-  color: red;
+  color: #ff3333;
 }
 
 .mid-score {
-  color: yellow;
+  color: #ffc300;
 }
 
 .high-score {
-  color: red;
+  color: #33ff33;
 }
 
 #start-screen {
-  background-color: black;
-  color: white;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
   flex-direction: column;
   align-items: center;
 }
 
 #start-screen h1 {
-  color: yellow;
-  font-size: 4rem;
+  color: #ffdd00;
+  font-size: 3.5rem;
   margin-top: 40vh;
-  margin-bottom: 40px;
-  animation: colours 1s infinite;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px #ffdd00, 0 0 10px #ffa500;
+  animation: neon-glow 1.5s infinite;
 }
 
+
 #start-msg {
-  animation: blink 0.8s infinite;
+  animation: blink 1s infinite;
 }
 
 #start-screen h2 {
-  margin: 20px 0px;
+  margin: 20px 0;
 }
 
 #game-over-screen {
   align-items: center;
-  color: red;
+  color: #ff1c1c;
   font-size: 6rem;
   justify-content: center;
-  animation: blink 0.8s infinite;
+  animation: blink 1s infinite;
   display: none;
 }
 
 #you-won-screen {
   align-items: center;
-  color: #0bf117;
+  color: #1cff1c;
   font-size: 6rem;
   justify-content: center;
-  animation: blink 0.8s infinite;
+  animation: blink 1s infinite;
   display: none;
 }
 
@@ -155,37 +157,49 @@ h2 {
 }
 
 @keyframes colours {
-  0% {
-    color: yellow;
+  0%, 30% {
+    color: #ffe600;
   }
-  31% {
-    color: yellow;
+  31%, 65% {
+    color: #ff69b4;
   }
-  33% {
-    color: #dd1282;
-  }
-  65% {
-    color: #dd1282;
-  }
-  66% {
-    color: #0fd6cc;
-  }
-  99% {
-    color: #0fd6cc;
+  66%, 100% {
+    color: #00ffff;
   }
 }
 
 @keyframes blink {
+  0%, 60% {
+    opacity: 1;
+  }
+  61%, 100% {
+    opacity: 0;
+  }
+}
+
+.pacman-title {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #ffcc00;
+  text-shadow: 
+    3px 3px 0px #000, 
+    -3px -3px 0px #000, 
+    3px -3px 0px #000, 
+    -3px 3px 0px #000;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  animation: pacman-glow 1.2s infinite alternate;
+  text-align: center;
+}
+
+@keyframes pacman-glow {
   0% {
     opacity: 1;
   }
-  60% {
+  50% {
+    opacity: 0.7;
+  }
+  100% {
     opacity: 1;
-  }
-  61% {
-    opacity: 0;
-  }
-  99% {
-    opacity: 0;
   }
 }
