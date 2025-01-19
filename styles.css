@@ -40,7 +40,7 @@ body {
 }
 
 .power-pellet {
-  background-color: #0eef0e;
+  background-color: rgb(238, 24, 202);
   border: solid #222 4px;
   box-sizing: border-box;
   border-radius: 50%;
@@ -71,12 +71,12 @@ body {
 
 .ghost {
   border: none;
+  border-radius: 0;
 }
 
 .scared-ghost {
   background-color: #800080;
   border: none;
-  border-radius: 50%;
 }
 
 .wall {
