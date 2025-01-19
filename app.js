@@ -1913,20 +1913,18 @@ document.addEventListener("DOMContentLoaded", () => {
         <li>Say <strong>"Left"</strong> to move left</li>
         <li>Say <strong>"Right"</strong> to move right</li>
       </ul>
-      <button id="close-popup" style="margin-top: 10px; padding: 10px; background-color: yellow; color: black; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;">
-        Okay
-      </button>
     `;
 
-    document.body.appendChild(popup);
+  document.body.appendChild(popup);
 
-    document.getElementById("close-popup").addEventListener("click", () => {
-      popup.style.display = "none";
-    });
-  }
+  setTimeout(() => {
+    popup.style.display = "none"; // Hide the popup
+  }, 7000);
+  
+}
 
-  // Show the welcome popup on page load
-  showWelcomePopup();
+// Show the welcome popup on page load
+showWelcomePopup();
 
   // Draw Pacman onto the board
   let pacmanCurrentIndex = 490;
